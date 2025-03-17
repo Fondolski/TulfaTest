@@ -43,12 +43,22 @@ export default function Home() {
 
     if(videoRef.current){
 
-      if(videoRef.current.paused === true || videoRef.current.currentTime === 0)
+      if(videoRef.current.paused === true || videoRef.current.currentTime === 0) {
+
+        videoRef?.current.play()
+
+      }
+
+      if(Math.round(videoRef.current.currentTime) >= Math.round(videoRef.current.duration) ) {
+
+        setVideoEnd(true)
+
+      }
       
   
       
   
-      videoRef?.current.play()
+      
   
       
   
@@ -56,6 +66,8 @@ export default function Home() {
     
       
     }
+
+    
   
    }
 
