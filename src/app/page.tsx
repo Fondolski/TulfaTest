@@ -10,7 +10,8 @@ export default function Home() {
   useEffect(()=> {
 
     if(videoRef){
-      videoRef.current.play()
+      
+      videoRef?.current.play()
       console.log(videoRef, "video")
     }
 
