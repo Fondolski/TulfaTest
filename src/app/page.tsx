@@ -5,13 +5,14 @@ import Image from "next/image";
 
 export default function Home() {
 
-  const videoRef = useRef(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(()=> {
 
-    if(videoRef){
-      
+    if(videoRef.current){
+
       videoRef?.current.play()
+      
       console.log(videoRef, "video")
     }
 
