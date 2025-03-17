@@ -24,6 +24,17 @@
         false
         );
 
+        window.addEventListener(
+            'touchend',
+            e => {
+                clearTimeout(isScrolling);
+                isScrolling = setTimeout(() => {
+                callback();
+                }, 500);
+            },
+            false
+            );
+
     });
   
     return null;
