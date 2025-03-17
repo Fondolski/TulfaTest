@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export default function useScroll(callback) {
+export default function useScroll(callback: any) {
 
 
     const [name, setName] = useState('Fondo')
@@ -8,7 +8,7 @@ export default function useScroll(callback) {
   useEffect(function mount() {
 
     
-    function onScroll(event) {
+    function onScroll(event: any) {
 
         console.log(event)
       

@@ -2,26 +2,17 @@
 
   import { useEffect, useState } from 'react';
   
-  export default function onScrollStop(callback) {
+  export default function onScrollStop(callback: any) {
   
   
       const [name, setName] = useState('Fondo')
   
     useEffect(function mount() {
   
-      
-      function onScroll(event) {
-  
-          console.log(event)
-        
-  
-        console.log(callback())
-  
-     
-      }
+    
   
 
-      let isScrolling;
+      let isScrolling: any;
         window.addEventListener(
         'mousewheel',
         e => {
