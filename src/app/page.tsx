@@ -34,7 +34,7 @@ export default function Home() {
           </video>
           <div className='bg-white z-20 absolute w-full h-auto min-h-screen top-0 mix-blend-lighten items-center justify-center flex'>
             <div>
-              <h1 className='md:text-8xl text-4xl font-extrabold mix-blend-burn'>Introducing</h1>
+              <h1 className='md:text-8xl text-8xl font-extrabold mix-blend-burn'>Introducing</h1>
             </div>
             
           </div>
