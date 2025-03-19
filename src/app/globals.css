@@ -24,3 +24,55 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.gradient-text {
+  background: linear-gradient(
+    to right,
+    #5b21b6,
+    #ec4899,
+    #ef4444
+    
+    
+  );
+  background-size: 300% 300%;
+  background-clip: text;
+}
+
+.reveal-body {
+  background: linear-gradient(
+    to right,
+    #2A266A,
+    #433E99,
+    #2A266A
+    
+    
+  );
+  
+}
+
+.reveal-text {
+  color: var(--background);
+  opacity: 0.5;
+}
+
+.background-animate {
+  background-size: 300%;
+  -webkit-animation: AnimateBackgroud 10s ease infinite;
+  -moz-animation: AnimateBackgroud 10s ease infinite;
+  animation: AnimateBackgroud 10s ease infinite;
+}
+
+@keyframes AnimateBackgroud {
+  0% {
+    background-position: 0;
+  }
+
+  50% {
+    background-position: 100%;
+  }
+
+   100% {
+    background-position: 0;
+  }
+}
+

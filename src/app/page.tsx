@@ -46,6 +46,7 @@ export default function Home() {
       if(videoRef.current.paused === true || videoRef.current.currentTime === 0) {
 
         videoRef?.current.play()
+        
 
       }
 
@@ -192,14 +193,14 @@ useEffect(() => {
 
 
   return (
-    <div className=" min-h-screen flex flex-col items-center overflow-hidden">
-      <main className="">
-        <div className=''>
+    <div className=" min-h-screen flex flex-col items-center overflow-hidden ">
+      <main className="overflow-hidden">
+        <div className='overflow-hidden'>
           <video width="full" height="full"   className='h-screen w-screen' ref={videoRef} onEnded={()=> setVideoEnd(true)} muted style={{objectFit: 'cover'}} onWheel={()=> playVideo()} onTouchStart={()=> {setScrollDirection(100); playVideo()}} >
             <source type="video/mp4" src="https://firebasestorage.googleapis.com/v0/b/tukiofusion.appspot.com/o/aerial-video-of-the-sunrise-in-the-dolomites-mount-2023-11-27-05-26-37-utc.mp4?alt=media&token=e08afda8-3274-4fa6-8081-9b6fa1c8e019" />  
             
           </video>
-          {videoEnd ? <BodyComponent /> : null}
+          <BodyComponent />
         </div>
         
         

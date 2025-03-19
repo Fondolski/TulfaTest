@@ -1,17 +1,19 @@
 "use client"
 
-import {useRef, useEffect, useState, useCallback} from 'react'
+import {useRef, useEffect, useState, useCallback, useLayoutEffect} from 'react'
 import Image from "next/image";
-
-
-
+import gsap from 'gsap';
+import {ScrollTrigger} from 'gsap/ScrollTrigger'
+import VirtualPhotographyComponent from './virtualPhotographyComponent';
+import TextGridComponent from './textGridComponent';
 
 
 
 
 export default function BodyComponent() {
 
-  
+  const introductionRef = useRef(null);
+
 
   useEffect(()=> {
 
@@ -28,20 +30,45 @@ export default function BodyComponent() {
 
   },[])
 
+  useLayoutEffect(()=> {
+
+
+    gsap.from(introductionRef.current, {
+      scale: 3,
+      duration: 2
+    })
+
+    
+
+  },[])
+
+
+  useLayoutEffect(()=> {
+
+    gsap.registerPlugin(ScrollTrigger)
+
+    
+
+  },[])
+
+  
+
+
+
 
 
 
 
   return (
     
-          <div>
-            <div className='bg-white z-20 w-full h-auto absolute overflow-y-scroll min-h-screen top-0 mix-blend-lighten items-center justify-center flex flex-col'>
-              <div className='h-screen flex items-center justify-center'>
-                <h1 className='md:text-8xl text-6xl font-extrabold mix-blend-burn'>Introducing</h1>
-              </div>
-              
-                  
+          <div className=' min-h-screen top-0 absolute w-full overflow-x-hidden '>
+            <div className='bg-white z-20 w-full h-screen  mix-blend-lighten items-center justify-center flex flex-col'>
+              <div className='h-screen flex items-center justify-center '>
+                <h1 className='md:text-8xl text-6xl  font-extrabold mix-blend-burn' ref={introductionRef} id='introduction'>Introducing</h1>
+              </div>      
             </div>
+            <VirtualPhotographyComponent />
+            <TextGridComponent />
           </div>
         
         
